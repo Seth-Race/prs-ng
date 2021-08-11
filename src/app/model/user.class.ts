@@ -1,24 +1,28 @@
-export class User {
-    Username: string;
-    FirstName: string;
-    LastName: string;
-    Phone: string;
-    Email: string;
-    Reviewer: boolean;
-    Admin: boolean;
-  
-    about(): string {
-        return "firstName = "+this.FirstName+", lastName="+this.LastName;
+export class User{
+
+    id:number;
+    username:string;
+    password:string;
+    lastName:string;
+    firstName:string;
+    email:string;
+    phone:string;
+    reviewer:boolean;
+    admin:boolean;
+    name:string;
+
+    constructor(id:number =0, username: string ='', password: string ='', lastName:string ='', 
+    firstName:string ='',email:string ='', phone:string ='', reviewer:boolean =false, 
+    admin:boolean = false, name:string = ''){
+        this.id=id;
+        this.username=username;
+        this.password=password;
+        this.lastName=lastName;
+        this.firstName=firstName;
+        this.email=email;
+        this.phone=phone;
+        this.reviewer=reviewer;
+        this.admin=admin;
+        this.name=name;
     }
-  
-    constructor(uName: string = '', fName: string = '', lName: string = '', ph: string = '', email: string = "",rev: boolean = false,
-      admin: boolean = false) {
-      this.Username = uName;
-      this.FirstName = fName;
-      this.LastName = lName;
-      this.Phone = ph;
-      this.Email = email;
-      this.Reviewer = rev;
-      this.Admin = admin;
-    }
-  }
+}
