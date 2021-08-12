@@ -13,6 +13,7 @@ export class UserCreateComponent implements OnInit {
   title: string = "User-Create";
   user: User = new User();
   submitBtnTitle: string = "Create";
+  http: any;
 
   constructor(
     private userSvc: UserService,
@@ -22,12 +23,14 @@ export class UserCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save(){
+  create(){
     this.userSvc.create(this.user).subscribe(
       resp => { this.user = resp as User;
                 this.router.navigateByUrl("/user-list")},
       err => { console.log(err) }
     );
   }
+
+
 
 }

@@ -10,6 +10,15 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +27,16 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
     UserCreateComponent,
     UserDetailComponent,
     UserEditComponent,
-    UserListComponent
+    UserListComponent,
+    UserLoginComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductEditComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

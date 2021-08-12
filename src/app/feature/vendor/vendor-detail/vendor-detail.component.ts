@@ -10,7 +10,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 })
 export class VendorDetailComponent implements OnInit {
 
-  title:string = "Vendor-Detail";
+  title:string = "Vendor Details";
   vendor: Vendor = new Vendor();
   vendorId:number = 0;
   submitBtnTitle:String = "Submit"
