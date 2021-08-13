@@ -19,6 +19,13 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
+import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
+import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
+import { LineItemCreateComponent } from './feature/lineitem/line-item-create/line-item-create.component';
+import { LineItemEditComponent } from './feature/lineitem/line-item-edit/line-item-edit.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,14 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
     ProductListComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    RequestListComponent,
+    RequestCreateComponent,
+    RequestDetailComponent,
+    RequestEditComponent,
+    LineItemCreateComponent,
+    LineItemEditComponent,
+    RequestLinesComponent
   ],
   imports: [
     BrowserModule,
