@@ -35,4 +35,9 @@ export class LineItemService {
       getLinesForRequest(requestId: number): Observable<LineItem[]> {
         return this.http.get(URL + "/lines-for-pr/"+ requestId) as Observable<LineItem[]>
       }
+
+      get(id: number): Observable<LineItem> {
+        return this.http.get(URL+`/`+id) as Observable<LineItem>;
+      }
+
 }

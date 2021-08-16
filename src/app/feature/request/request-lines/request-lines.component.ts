@@ -15,6 +15,7 @@ export class RequestLinesComponent implements OnInit {
   title: string = "Request/Line Items";
   requestId: number = 0;
   request: Request = new Request();
+  lineItem: LineItem= new LineItem();
   lineItems: LineItem[] = [];
   
 
@@ -27,6 +28,7 @@ export class RequestLinesComponent implements OnInit {
 
   ngOnInit(): void {
     // 1. get request for id passed in URL
+    console.log("The request ID is: " +this.requestId)
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
     this.requestSvc.get(this.requestId).subscribe(
       resp => { this.request = resp as Request;},
@@ -40,6 +42,31 @@ export class RequestLinesComponent implements OnInit {
             err=> {console.log(err);}
     );
 
+  }
+
+  delete(lineItemId: number) {
+    this.lineItemSvc.delete(lineItemId).subscribe( 
+      resp =>{
+        this.lineItem= resp as LineItem;
+        // refreshing request
+        this.route.params.subscribe(parms => this.requestId = parms["id"]);
+        this.requestSvc.get(this.requestId).subscribe(
+          resp => { this.request = resp as Request;},
+          err=> {console.log(err);}
+        );
+        //getting lines over again
+        this.route.params.subscribe(parms => this.requestId = parms["id"]);
+        console.log('requestId= '+this.requestId);
+        this.lineItemSvc.getLinesForRequest(this.requestId).subscribe(
+          resp => { this.lineItems = resp as LineItem[];},
+          err=> {console.log(err);}
+        );
+        this.router.navigateByUrl('/request-lines/'+this.request.id);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }

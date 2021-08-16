@@ -23,7 +23,7 @@
 </table>
 <section class="heading">
     <span class="page-title font-weight-bold font-italic">Line Items</span> |
-    <a routerLink='/line-item-create/:id'>
+    <a routerLink='/line-item-create/{{request.id}}'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
     </section>
@@ -48,10 +48,10 @@
             <td> 
                 <a routerLink='/line-item-edit/{{lineItem.id}}'>
                 <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
-                </a> |
-                <a routerLink='/line-item-edit/{{lineItem.id}}'>
+                </a> | 
+                <span><button (click)="delete(lineItem.id)" style="border:none">
                 <img width='20' height='20' src='assets/delete.jpg' title='Delete Line Item'>
-                </a>
+                </button></span>
         </td>
         </tr>
     </tbody>
