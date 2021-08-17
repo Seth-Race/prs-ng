@@ -10,11 +10,14 @@ export class SystemService {
 
   constructor(private router: Router) { }
 
-//   checkLogin(): void {
-//       if (this.loggedInUser.id == 0) {
-//           console.log("User is not logged in.");
-//           this.router.navigateByUrl("/user-login"):
-//       }
-//   }
+  isAdmin(): boolean {
+    return (this.loggedInUser == null) ? false : this.loggedInUser.admin;
+  }
+
+  checkLogin(): void {
+      if (this.loggedInUser.id == 0) {
+          this.router.navigateByUrl("/user-login");
+      }
+  }
 
 }
