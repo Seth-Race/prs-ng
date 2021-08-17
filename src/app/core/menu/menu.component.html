@@ -5,5 +5,7 @@
         <li *ngFor='let mi of menuItems' title='{{mi.tooltip}}'>
             <a routerLink='{{mi.href}}'>{{mi.display}}</a> 
         </li>
+           <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello, {{loggedInUser.firstName}}</span>
+
     </ul>
 </nav>
