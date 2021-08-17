@@ -28,7 +28,6 @@ export class RequestLinesComponent implements OnInit {
 
   ngOnInit(): void {
     // 1. get request for id passed in URL
-    console.log("The request ID is: " +this.requestId)
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
     this.requestSvc.get(this.requestId).subscribe(
       resp => { this.request = resp as Request;},
@@ -56,7 +55,6 @@ export class RequestLinesComponent implements OnInit {
         );
         //getting lines over again
         this.route.params.subscribe(parms => this.requestId = parms["id"]);
-        console.log('requestId= '+this.requestId);
         this.lineItemSvc.getLinesForRequest(this.requestId).subscribe(
           resp => { this.lineItems = resp as LineItem[];},
           err=> {console.log(err);}
@@ -72,7 +70,6 @@ export class RequestLinesComponent implements OnInit {
 
 
   status() {
-    console.log("Review request lines:", this.request);
     this.requestSvc.submit(this.request).subscribe(
       resp => {
         this.request = resp as Request;

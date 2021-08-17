@@ -68,7 +68,7 @@ export class LineItemEditComponent implements OnInit {
   save() {
     this.lineItemSvc.edit(this.lineItem).subscribe(
       resp => {this.lineItem= resp as LineItem;
-              this.router.navigateByUrl('/request-lines/'+this.requestId)},
+              this.router.navigateByUrl('/request-lines')},
       err => {console.log(err);}
     );
 

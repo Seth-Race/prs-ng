@@ -18,12 +18,10 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("User List, checking loggedInUser in sysSvc: ", this.sysSvc.loggedInUser);
     this.userSvc.list()
     .subscribe(
       resp => {
         this.users= resp as User[];
-        console.log("list of users ", this.users);
       },
       err => {
         console.log(err);

@@ -35,7 +35,6 @@ export class RequestApproveComponent implements OnInit {
       resp => {
         this.request = resp as Request;
 
-        console.log('requestId= ' + this.requestId);
         this.lineItemSvc.getLinesForRequest(this.requestId).subscribe(
           resp => {
             this.lineItems = resp as LineItem[];

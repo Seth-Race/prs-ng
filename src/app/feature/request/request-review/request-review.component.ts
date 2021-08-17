@@ -34,7 +34,6 @@ export class RequestReviewComponent implements OnInit {
 
 
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
-    console.log('requestId= '+this.requestId);
     this.requestSvc.reviewRequests(this.sysSvc.loggedInUser.id).subscribe(
       resp => { 
         this.requests = resp as Request[];

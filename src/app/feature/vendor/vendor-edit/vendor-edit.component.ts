@@ -23,7 +23,6 @@ export class VendorEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(parms => this.vendorId = parms["id"]);
-    console.log('vendorId =' +this.vendorId);
     this.vendorSvc.get(this.vendorId).subscribe(
       resp => {
         this.vendor = resp as Vendor;},
